@@ -1,0 +1,44 @@
+# @package _global_
+
+name: ARZ_plain_amortized_SDA
+
+defaults:
+  - /data: arz
+  - /net: unet
+  - /score: unet_amortized
+  - /eval_data: arz
+  - /sampler: dpm
+
+window: 12
+predictive_horizon: 6
+amortized: true
+fixed_horizon: true
+noise_std: 0.0
+noise_std_da: 0.0
+
+net:
+  hidden_channels: [64,128,256,1024]
+  hidden_blocks: [3,3,3,3]
+  kernel_size: 3
+  activation: 'SiLU'
+  spatial: ${data.spatial}
+  padding_mode: 'zeros'
+
+optim:
+  lr: 2e-4
+  weight_decay: 1e-5
+
+eval:
+  load_model_name: "score_ema.pth"
+  task: forecast
+  forecast:
+    conditioned_frame: ${eval:'${window} - ${eval.forecast.predictive_horizon}'}
+    trajectory_length: 360
+
+# training:
+epochs: 1024
+batch_size: 1024
+scheduler_name: 'cosine'
+model_type: "noise"
+log_loss_per_level: False
+ema_decay: 0.9999

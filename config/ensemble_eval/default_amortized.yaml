@@ -1,0 +1,21 @@
+# @package _global_
+ensemble_eval_name: default
+
+eval:
+  rollout_type: autoregressive
+  autoregressive:
+    variant: standard
+  guidance:
+    type: MMPS
+    gamma: 1.0
+    gamma1: 1.0
+    std: 0.5
+  sampling:
+    steps: 128
+    corrections: 1
+    tau: 0.25
+  forecast:
+    n_samples: 10
+    predictive_horizon: 5
+  data_idx: 0
+  n_eval_trajectories: 10

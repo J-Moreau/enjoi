@@ -1,0 +1,9 @@
+name: arz_low
+path: ${data_dir}/sim/macro-2026-04-01T15-22
+spatial: 1
+grid_size: [40]
+state_shape: [1,40]
+format: zarr
+zarr_subpath: ld/{split}/v
+scale_min: 0.0
+scale_max: 33.0

@@ -1,0 +1,11 @@
+name: arz
+path: ${data_dir}/sim/ramps-2026-08-28T16-19
+spatial: 1
+grid_size: [200]
+state_shape: [1,200]
+format: zarr
+zarr_subpath: sd/{split}/v
+dt_seconds: 10.0
+dx_meters: 100.0
+scale_min: 0.0
+scale_max: 20.0

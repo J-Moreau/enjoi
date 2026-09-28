@@ -1,0 +1,9 @@
+type: sparse
+trajectory_length: 640
+noise_std: 0.5
+initial_condition_frames: ${window}
+initial_box_blur: 0
+
+sparse:
+  perc_obs: 0.1
+  seed: ${seed}

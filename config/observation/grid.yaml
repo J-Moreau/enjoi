@@ -1,0 +1,8 @@
+type: grid
+trajectory_length: 640
+noise_std: 0.1
+initial_condition_frames: ${window}
+initial_box_blur: 0
+
+grid:
+  points_per_dim: 16

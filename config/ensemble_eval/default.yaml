@@ -1,0 +1,22 @@
+# @package _global_
+ensemble_eval_name: default
+
+eval:
+  rollout_type: autoregressive
+  autoregressive:
+    variant: standard
+  guidance:
+    type: SDA
+    gamma: 0.1
+    gamma1: 0.1
+    std: 0.01
+    std_past: 0.01
+  sampling:
+    steps: 128
+    corrections: 1
+    tau: 0.25
+  forecast:
+    n_samples: 10
+    predictive_horizon: 5
+  data_idx: 0
+  n_eval_trajectories: 10

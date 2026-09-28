@@ -1,0 +1,10 @@
+type: sine
+trajectory_length: 640
+noise_std: 0.5
+initial_condition_frames: ${window}
+initial_box_blur: 0
+
+sine:
+  period: 64
+  amplitude_fraction: 0.5
+  width_divisor: 64

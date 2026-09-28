@@ -1,0 +1,32 @@
+# @package _global_
+
+ensemble_eval_name: enjoi
+
+eval:
+  task: forecast
+  rollout_type: autoregressive
+  autoregressive:
+    variant: ensemble_var
+    empirical_variance:
+      full_covariance: true
+      min_ar_std: 0.01
+      ar_cov_localization_bandwidth: 3
+      temporal_band: 10
+      hybrid_ratio: 0.0
+      static_std: 0.01
+      use_sample_based_ar_conditioning: true
+      path_to_marginal_score_ckpt: null
+  guidance:
+    type: scaled
+    gamma: 1.0
+    gamma1: 0.0
+    std: 0.5
+  sampling:
+    steps: 128
+    corrections: 1
+    tau: 0.25
+  forecast:
+    n_samples: 10
+    predictive_horizon: 5
+  data_idx: 0
+  n_eval_trajectories: 10

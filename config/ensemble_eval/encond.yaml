@@ -1,0 +1,31 @@
+# @package _global_
+
+ensemble_eval_name: encond
+
+eval:
+  rollout_type: autoregressive
+  autoregressive:
+    variant: ensemble_var
+    empirical_variance:
+      full_covariance: false
+      min_ar_std: 1e-3
+      ar_cov_localization_bandwidth: 10
+      hybrid_ratio: 0.0
+      static_std: 1.0
+      use_sample_based_ar_conditioning: true
+      path_to_marginal_score_ckpt: "results/KS_joint_SDA/epochs=1024,window=4/0/ckpt/latest.pth"
+      score: conditional
+  guidance:
+    type: scaled
+    gamma: 1.0
+    gamma1: 1.0
+    std: 0.5
+  sampling:
+    steps: 128
+    corrections: 1
+    tau: 0.25
+  forecast:
+    n_samples: 10
+    predictive_horizon: 5
+  data_idx: 0
+  n_eval_trajectories: 10

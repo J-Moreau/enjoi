@@ -1,0 +1,7 @@
+name: dmap-expint
+skip_type: linear
+order: 1
+correcting_x0_fn: None
+denoise_to_zero: True
+alg_type: dpmsolver++
+eta: 1.0

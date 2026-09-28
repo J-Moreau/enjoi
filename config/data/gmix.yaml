@@ -1,0 +1,5 @@
+name: gmix
+format: gmix
+spatial: 1
+grid_size: [1]
+state_shape: [1]

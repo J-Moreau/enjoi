@@ -1,0 +1,13 @@
+type: probe
+trajectory_length: 360
+noise_std: 0.2
+initial_condition_frames: 15
+initial_box_blur: 0
+
+probe:
+  n_ramps: 12
+  rho_max: 0.1
+  penetration_ratio: 0.02
+  seed: ${seed}
+  speed_noise: 0.2
+  periodic: true

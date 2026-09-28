@@ -1,0 +1,5 @@
+name: arz
+path: ${data_dir}/sim/macro-2026-04-01T15-22
+spatial: 1
+grid_size: [200]
+state_shape: [1,200]

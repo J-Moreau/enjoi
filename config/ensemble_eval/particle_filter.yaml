@@ -1,0 +1,30 @@
+# @package _global_
+ensemble_eval_name: particle_filter
+
+eval:
+  rollout_type: autoregressive
+  autoregressive:
+    variant: particle_filter
+    full_covariance: false
+    particle_filter:
+      alpha_init: 1.0
+      alpha_min: 1e-12
+      alpha_max: 1.0
+      neff_min: 0.5
+      neff_max: 0.9
+      alpha_search_steps: 20
+  guidance:
+    type: MMPS
+    gamma: 1.0
+    gamma1: 0.0
+    std: 0.5
+    std_past: 0.01
+  sampling:
+    steps: 128
+    corrections: 1
+    tau: 0.25
+  forecast:
+    n_samples: 10
+    predictive_horizon: 5
+  data_idx: 0
+  n_eval_trajectories: 10

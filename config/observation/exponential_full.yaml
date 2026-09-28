@@ -1,0 +1,9 @@
+type: exponential_full
+trajectory_length: 640
+noise_std: 0.5
+initial_condition_frames: ${window}
+initial_box_blur: 0
+
+exponential_full:
+  mean_gap: 10
+  seed: 1
